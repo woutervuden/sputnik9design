@@ -16,6 +16,7 @@ $(document).ready(function() {
   // Pre cache elements for later reference
   var progressWrap = $('.progress-wrap');
   var progressBar = $('.progress-bar');
+  var aboutSection = $('#about')[0];
 
   // on browser resize...
   $(window).resize(moveProgressBar);
@@ -38,7 +39,7 @@ $(document).ready(function() {
   // Only move progress bar when user has arrived at about section
   var hasMoved = false;
   $(window).on('scroll', function(e) {
-    if (window.pageYOffset >= 900) {
+    if (aboutSection.getBoundingClientRect().top <= 0) {
       if (!hasMoved) {
         moveProgressBar();
         hasMoved = true;

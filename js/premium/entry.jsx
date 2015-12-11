@@ -13,7 +13,7 @@ class Entry extends React.Component {
         <h1 className="entry-title">{this.props.title}</h1>
         <h2 className="entry-log-date">Entry {this.props.id} - {this.props.month} 2016</h2>
         <p>Video with url: {this.props.video}</p>
-        <VideoPlayer sources={sources} />
+        <VideoPlayer sources={[this.props.video]} poster={this.props.poster} />
         <p>{this.props.description}</p>
       </div>
     )
@@ -28,6 +28,7 @@ export default class EntryHandler extends React.Component {
               month={data.month}
               title={data.title}
               video={data.vid_url}
+              poster={data.vid_poster}
               description={data.description}
             />
   }

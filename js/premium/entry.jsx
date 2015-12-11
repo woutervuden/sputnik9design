@@ -13,7 +13,7 @@ class Entry extends React.Component {
         <h1 className="entry-title">{this.props.title}</h1>
         <h2 className="entry-log-date">Entry {this.props.id} - {this.props.month} 2016</h2>
         <p>Video with url: {this.props.video}</p>
-        <VideoPlayer sources={[this.props.video]} poster={this.props.poster} />
+        <VideoPlayer key={this.props.id} sources={[this.props.video]} poster={this.props.poster} />
         <p>{this.props.description}</p>
       </div>
     )

@@ -24,10 +24,11 @@ gulp.task('html:watch', function() {
 	gulp.watch("./**/*.html" , livereload.changed)
 })
 
-gulp.task('js', function() {
+gulp.task('js', function(done) {
   webpack(webpackConfig).run(function(err, stats) {
     if (err) console.error(err);
     console.log(stats.toString({colors: true}));
+    done();
   })
 })
 

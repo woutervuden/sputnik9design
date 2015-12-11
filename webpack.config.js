@@ -22,6 +22,7 @@ module.exports = {
   externals: {
     react: "React",
     lodash: "_",
+    "react-dom": "ReactDOM",
     "react-router": "ReactRouter"
   },
   devtool: "#inline-source-map"

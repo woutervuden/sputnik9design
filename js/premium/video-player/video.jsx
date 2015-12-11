@@ -3,30 +3,28 @@ import React from 'react'
 export default class Video extends React.Component {
 
   componentDidMount() {
-    this.node = this.refs.vid.getDOMNode()
-    this.node.volume = this.props.volume / 100;
-    this.node.addEventListener('timeupdate',
+    this.refs.vid.volume = this.props.volume / 100;
+    this.refs.vid.addEventListener('timeupdate',
                                ({target: {currentTime, duration}}) => {
       this.props.onTimeUpdate(currentTime, duration);
     });
   }
 
   componentDidUpdate(prevProps) {
-    var node = this.refs.vid.getDOMNode()
     if (prevProps.playing != this.props.playing)
-      this.props.playing ? node.play() : node.pause();
+      this.props.playing ? this.refs.vid.play() : this.refs.vid.pause();
     if (prevProps.volume != this.props.volume)
-      node.volume = this.props.volume / 100;
+      this.refs.vid.volume = this.props.volume / 100;
   }
 
   // Public - to be called by video player parent
   setCurrentTime(newTime) {
-    this.refs.vid.getDOMNode().currentTime = newTime;
+    this.refs.vid.currentTime = newTime;
   }
 
   // Public - to be called by video player parent
   requestFullScreen() {
-    this.refs.vid.getDOMNode().webkitRequestFullscreen();
+    this.refs.vid.webkitRequestFullscreen();
   }
 
   render() {
@@ -38,6 +36,6 @@ export default class Video extends React.Component {
   }
 
   _renderSource(source) {
-    return <source src={source} />
+    return <source key={source} src={source} />
   }
 }

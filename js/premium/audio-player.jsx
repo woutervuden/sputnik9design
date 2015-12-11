@@ -40,6 +40,6 @@ export default class AudioPlayer extends React.Component {
   }
 
   _renderSong(song) {
-    return <Song title={song.title} />
+    return <Song title={song.title} key={song.title} />
   }
 }

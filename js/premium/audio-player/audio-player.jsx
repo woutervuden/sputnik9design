@@ -10,7 +10,8 @@ export default class AudioPlayer extends React.Component {
       duration: 0,
       displayTime: 0,
       volume: 50,
-      currentSong: props.songs[0]
+      currentSong: props.songs[0],
+      loading: false
     }
   }
 
@@ -18,7 +19,7 @@ export default class AudioPlayer extends React.Component {
     return (
       <div className="audio-player" >
         <h1>Muziek Player</h1>
-        <p>Playing: {this.state.currentSong.title}</p>
+        <p>{this.state.loading ? "Loading..." : this.state.currentSong.title}</p>
         <ControlPanel
           playing={this.state.playing}
           onPlayPauze={this._onPlayPauze.bind(this)}
@@ -106,11 +107,16 @@ export default class AudioPlayer extends React.Component {
       volume: this.state.volume / 100,
       onload: () => {
         this.setState({
-          duration: this.howl._duration
+          duration: this.howl._duration,
+          loading: false
         })
       },
     }).play()
-    this.setState({playing: true, displayTime: 0});
+    this.setState({
+      playing: true,
+      displayTime: 0,
+      loading: true
+    });
     this.interval = setInterval(() => {
       this.setState({
         displayTime: this.howl.pos()

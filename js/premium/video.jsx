@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class extends React.Component {
+export default class Video extends React.Component {
 
   componentDidMount() {
     this.node = this.refs.vid.getDOMNode()
@@ -17,6 +17,11 @@ export default class extends React.Component {
       this.props.playing ? node.play() : node.pause();
     if (prevProps.volume != this.props.volume)
       node.volume = this.props.volume / 100;
+  }
+
+  // Public - to be called by video player parent
+  setCurrentTime(newTime) {
+    this.refs.vid.getDOMNode().currentTime = newTime;
   }
 
   render() {

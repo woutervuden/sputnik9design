@@ -23,8 +23,12 @@ class App extends React.Component {
 }
 
 var posterUrl = "http://www.popularmechanics.co.za/wp-content/uploads/resized/90300_resized_laika480x380.jpg";
+var sources = [
+  'https://video-ams2-1.xx.fbcdn.net/hvideo-xpl1/v/t42.1790-2/12349833_920596508026240_834944478_n.mp4?efg=eyJybHIiOjM0MywicmxhIjo1MTIsInZlbmNvZGVfdGFnIjoidjNfNDI2X2NyZl8yM19tYWluXzMuMF9zZCJ9&rl=343&vabr=191&oh=47d7e62fc8e116fbf010bc0d8b26c0ab&oe=5669107C'
+]
 
-React.render(<VideoPlayer poster={posterUrl} sources={['videos/001.mp4']} />, document.getElementById('content'));
+
+React.render(<VideoPlayer poster={posterUrl} sources={sources} />, document.getElementById('content'));
 
 // React.render(
 //   <Router>

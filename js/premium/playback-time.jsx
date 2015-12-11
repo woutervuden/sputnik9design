@@ -11,7 +11,7 @@ function formatTime(val) {
  return `${pad(mins)}:${pad(secs)}`;
 }
 
-export default class extends React.Component {
+export default class PlaybackTime extends React.Component {
   render() {
     return <span className="playback-time">
       {formatTime(this.props.time)} / {formatTime(this.props.duration)}

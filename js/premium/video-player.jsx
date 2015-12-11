@@ -31,6 +31,7 @@ export default class VideoPlayer extends React.Component {
           onVolumeChange={this._onVolumeChange.bind(this)}
           displayTime={this.state.displayTime}
           duration={this.state.duration}
+          onSeek={this._onSeek.bind(this)}
         />
       </div>
     )
@@ -46,5 +47,9 @@ export default class VideoPlayer extends React.Component {
 
   _onTimeUpdate(time, duration) {
     this.setState({displayTime: time, duration: duration});
+  }
+
+  _onSeek(newTime) {
+    this.refs.vid.setCurrentTime(newTime);
   }
 }

@@ -3,19 +3,19 @@ import {render} from 'react-dom';
 import Entry from './entry.jsx';
 import Home from './home.jsx';
 import AudioPlayer from './audio-player.jsx';
-import { Router, Route, Link } from 'react-router';
+import { Router, Route, Link, IndexRoute, IndexLink } from 'react-router';
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <h1>Entries</h1>
-        <Link to="/">Logs Home</Link>
-        <Link to="/entries/0">Entry 1</Link>
-        <Link to="/entries/1">Entry 2</Link>
-        <Link to="/entries/2">Entry 3</Link>
-        <Link to="/entries/3">Entry 4</Link>
-        {this.props.children || <Home />}
+        <IndexLink to="/" activeClassName="active">Logs Home</IndexLink>
+        <Link to="/entries/0" activeClassName="active">Entry 1</Link>
+        <Link to="/entries/1" activeClassName="active">Entry 2</Link>
+        <Link to="/entries/2" activeClassName="active">Entry 3</Link>
+        <Link to="/entries/3" activeClassName="active">Entry 4</Link>
+        {this.props.children}
         <AudioPlayer />
       </div>
     )
@@ -25,6 +25,7 @@ class App extends React.Component {
 render(
   <Router>
     <Route path="/" component={App}>
+      <IndexRoute component={Home} />
       <Route path="entries/:entryId" component={Entry} />
     </Route>
   </Router>

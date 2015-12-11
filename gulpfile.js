@@ -5,6 +5,7 @@ var gulp = require('gulp')
 var serve = require('gulp-serve')
 var webpack = require('webpack')
 var webpackConfig = require('./webpack.config')
+var gutil = require('gulp-util');
 
 gulp.task('css', function() {
 	gulp.src("sass/index.scss")
@@ -26,8 +27,8 @@ gulp.task('html:watch', function() {
 
 gulp.task('js', function(done) {
   webpack(webpackConfig).run(function(err, stats) {
-    if (err) console.error(err);
-    console.log(stats.toString({colors: true}));
+    if (err) throw new gutil.PluginError("webpack", err)
+    gutil.log("[webpack]", stats.toString({colors: true}));
     done();
   })
 })

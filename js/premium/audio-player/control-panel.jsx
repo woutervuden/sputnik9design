@@ -1,8 +1,8 @@
-import React from 'react';
-import PlayPauze from '../video-player/buttons/playpauze.jsx';
-import VolumeControls from '../video-player/buttons/volume-controls.jsx';
-import PlaybackTime from '../video-player/display/playback-time.jsx';
-import ProgressBar from '../video-player/display/progress-bar.jsx';
+import React          from 'react';
+import PlayPauze      from '../util/buttons/playpauze.jsx';
+import VolumeControls from '../util/buttons/volume-controls.jsx';
+import PlaybackTime   from '../util/display/playback-time.jsx';
+import ProgressBar    from '../util/display/progress-bar.jsx';
 
 export default class ControlPanel extends React.Component {
   render() {

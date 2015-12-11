@@ -1,10 +1,9 @@
-import React from 'react';
-import PlayPauze from './buttons/playpauze.jsx';
-import VolumeControls from './buttons/volume-controls.jsx';
-import PlaybackTime from './display/playback-time.jsx';
-import ProgressBar from './display/progress-bar.jsx';
-import FullScreenButton from './buttons/fullscreen.jsx';
-
+import React            from 'react';
+import PlayPauze        from '../util/buttons/playpauze.jsx';
+import VolumeControls   from '../util/buttons/volume-controls.jsx';
+import FullScreenButton from '../util/buttons/fullscreen.jsx';
+import PlaybackTime     from '../util/display/playback-time.jsx';
+import ProgressBar      from '../util/display/progress-bar.jsx';
 
 export default class ControlPanel extends React.Component {
   render() {

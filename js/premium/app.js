@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import Entry from './entry.jsx';
 import Home from './home.jsx';
-import AudioPlayer from './audio-player.jsx';
+import AudioPlayer from './audio-player/audio-player.jsx';
 import { Router, Route, Link, IndexRoute, IndexLink } from 'react-router';
 import Songs from './songs';
 

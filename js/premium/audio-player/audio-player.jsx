@@ -10,7 +10,7 @@ export default class AudioPlayer extends React.Component {
       duration: 0,
       displayTime: 0,
       volume: 50,
-      currentSongIdx: 0
+      currentSong: props.songs[0]
     }
   }
 
@@ -18,6 +18,7 @@ export default class AudioPlayer extends React.Component {
     return (
       <div className="audio-player" >
         <h1>Muziek Player</h1>
+        <p>Playing: {this.state.currentSong.title}</p>
         <ControlPanel
           playing={this.state.playing}
           onPlayPauze={this._onPlayPauze.bind(this)}
@@ -40,6 +41,7 @@ export default class AudioPlayer extends React.Component {
       url={song.url}
       key={song.id}
       id={song.id}
+      active={this.state.currentSong == song}
       onClick={this._onSongClick.bind(this)}
     />
   }
@@ -59,11 +61,11 @@ export default class AudioPlayer extends React.Component {
   }
 
   _onPrev() {
-    this._swapSong(this.state.currentSongIdx - 1);
+    this._swapSong(this.state.currentSong.id - 1);
   }
 
   _onNext() {
-    this._swapSong(this.state.currentSongIdx + 1);
+    this._swapSong(this.state.currentSong.id + 1);
   }
 
   _onSongClick(songId) {
@@ -93,7 +95,7 @@ export default class AudioPlayer extends React.Component {
   _swapSong(songId) {
     var songToPlay = this.props.songs[songId];
     if (!songToPlay) return;
-    this.setState({currentSongIdx: songId});
+    this.setState({currentSong: songToPlay});
     this._clearSong();
     this._playSong(songToPlay);
   }

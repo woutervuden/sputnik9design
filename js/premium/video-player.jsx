@@ -7,7 +7,9 @@ export default class VideoPlayer extends React.Component {
     super(props);
     this.state = {
       playing: false,
-      volume: 80
+      volume: 20,
+      displayTime: 0,
+      duration: 0
     }
   }
 
@@ -20,12 +22,15 @@ export default class VideoPlayer extends React.Component {
           poster={this.props.poster}
           playing={this.state.playing}
           volume={this.state.volume}
+          onTimeUpdate={this._onTimeUpdate.bind(this)}
         />
         <ControlPanel
           playing={this.state.playing}
           onPlayPauze={this._onPlayPauze.bind(this)}
           volume={this.state.volume}
           onVolumeChange={this._onVolumeChange.bind(this)}
+          displayTime={this.state.displayTime}
+          duration={this.state.duration}
         />
       </div>
     )
@@ -37,5 +42,9 @@ export default class VideoPlayer extends React.Component {
 
   _onVolumeChange(newVolume) {
     this.setState({volume: newVolume})
+  }
+
+  _onTimeUpdate(time, duration) {
+    this.setState({displayTime: time, duration: duration});
   }
 }

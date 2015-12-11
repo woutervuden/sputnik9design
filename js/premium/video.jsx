@@ -1,6 +1,16 @@
 import React from 'react'
 
 export default class extends React.Component {
+
+  componentDidMount() {
+    this.node = this.refs.vid.getDOMNode()
+    this.node.volume = this.props.volume / 100;
+    this.node.addEventListener('timeupdate',
+                               ({target: {currentTime, duration}}) => {
+      this.props.onTimeUpdate(currentTime, duration);
+    });
+  }
+
   componentDidUpdate(prevProps) {
     var node = this.refs.vid.getDOMNode()
     if (prevProps.playing != this.props.playing)

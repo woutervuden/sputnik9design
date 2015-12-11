@@ -1,23 +1,6 @@
 import React from 'react';
 import ControlPanel from './control-panel.jsx';
-
-class Song extends React.Component {
-  render() {
-    return (
-      <button
-        href="#"
-        className="player-song"
-        onClick={this._onClick.bind(this)}
-      >
-        <p className="song-title" >{this.props.title}</p>
-      </button>
-    )
-  }
-
-  _onClick() {
-    this.props.onClick(this.props.id);
-  }
-}
+import Song from './song.jsx';
 
 export default class AudioPlayer extends React.Component {
   constructor(props) {
@@ -26,7 +9,8 @@ export default class AudioPlayer extends React.Component {
       playing: false,
       duration: 0,
       displayTime: 0,
-      volume: 50
+      volume: 50,
+      currentSongIdx: 0
     }
   }
 
@@ -37,6 +21,8 @@ export default class AudioPlayer extends React.Component {
         <ControlPanel
           playing={this.state.playing}
           onPlayPauze={this._onPlayPauze.bind(this)}
+          onPrev={this._onPrev.bind(this)}
+          onNext={this._onNext.bind(this)}
           displayTime={this.state.displayTime}
           duration={this.state.duration}
           onSeek={this._onSeek.bind(this)}
@@ -58,6 +44,11 @@ export default class AudioPlayer extends React.Component {
     />
   }
 
+  /*
+   * ============================
+   * Control panel event handlers
+   * ============================
+   */
   _onPlayPauze() {
     if (!this.howl) {
       this._playSong(this.props.songs[0]);
@@ -67,11 +58,16 @@ export default class AudioPlayer extends React.Component {
     }
   }
 
+  _onPrev() {
+    this._swapSong(this.state.currentSongIdx - 1);
+  }
+
+  _onNext() {
+    this._swapSong(this.state.currentSongIdx + 1);
+  }
+
   _onSongClick(songId) {
-    var songToPlay = this.props.songs[songId];
-    if (!songToPlay) return;
-    this._clearSong();
-    this._playSong(songToPlay);
+    this._swapSong(songId);
   }
 
   _onSeek(newPosition) {
@@ -84,9 +80,22 @@ export default class AudioPlayer extends React.Component {
     this.howl.volume(vol / 100);
   }
 
+  /*
+   * ===============
+   * Private helpers
+   * ===============
+   */
   _clearSong() {
     if (this.howl) this.howl.unload();
     if (this.interval) clearInterval(this.interval);
+  }
+
+  _swapSong(songId) {
+    var songToPlay = this.props.songs[songId];
+    if (!songToPlay) return;
+    this.setState({currentSongIdx: songId});
+    this._clearSong();
+    this._playSong(songToPlay);
   }
 
   _playSong(song) {

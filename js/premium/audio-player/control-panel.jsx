@@ -7,10 +7,12 @@ import ProgressBar from '../video-player/display/progress-bar.jsx';
 export default class ControlPanel extends React.Component {
   render() {
     return <div className="control-panel">
+      <button onClick={this.props.onPrev}>Prev</button>
       <PlayPauze
         playing={this.props.playing}
         onPlayPauze={this.props.onPlayPauze}
       />
+      <button onClick={this.props.onNext}>Next</button>
       <ProgressBar
         value={this.props.displayTime}
         max={this.props.duration}

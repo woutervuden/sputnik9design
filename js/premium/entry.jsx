@@ -1,6 +1,7 @@
 import React from 'react';
+import EntryData from './entries'
 
-export default class Travel extends React.Component {
+class Entry extends React.Component {
   render() {
     return (
       <div class="entry">
@@ -12,3 +13,17 @@ export default class Travel extends React.Component {
     )
   }
 }
+
+export default class EntryHandler extends React.Component {
+  render() {
+    var data = EntryData[this.props.params.entryId];
+    return <Entry
+              id={data.id}
+              month={data.month}
+              title={data.title}
+              video={data.vid_url}
+              description={data.description}
+            />
+  }
+}
+

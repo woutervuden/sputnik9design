@@ -2,7 +2,8 @@ import React from 'react';
 import Entry from './entry.jsx';
 import Home from './home.jsx';
 import AudioPlayer from './audio-player.jsx';
-import { Router, Route, Link } from 'react-router'
+import VideoPlayer from './video-player/video-player.jsx';
+import { Router, Route, Link } from 'react-router';
 
 class App extends React.Component {
   render() {
@@ -21,11 +22,14 @@ class App extends React.Component {
   }
 }
 
+var posterUrl = "http://www.popularmechanics.co.za/wp-content/uploads/resized/90300_resized_laika480x380.jpg";
 
-React.render(
-  <Router>
-    <Route path="/" component={App}>
-      <Route path="entries/:entryId" component={Entry} />
-    </Route>
-  </Router>
-, document.getElementById('content'))
+React.render(<VideoPlayer poster={posterUrl} sources={['videos/001.mp4']} />, document.getElementById('content'));
+
+// React.render(
+//   <Router>
+//     <Route path="/" component={App}>
+//       <Route path="entries/:entryId" component={Entry} />
+//     </Route>
+//   </Router>
+// , document.getElementById('content'))

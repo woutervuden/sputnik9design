@@ -1,13 +1,19 @@
 import React from 'react';
-import EntryData from './entries'
+import EntryData from './entries';
+import VideoPlayer from './video-player/video-player.jsx';
+
+var sources = [
+  'videos/001.mp4'
+]
 
 class Entry extends React.Component {
   render() {
     return (
-      <div class="entry">
-        <h1 class="entry-title">{this.props.title}</h1>
-        <h2 class="entry-log-date">Entry {this.props.id} - {this.props.month} 2016</h2>
+      <div className="entry">
+        <h1 className="entry-title">{this.props.title}</h1>
+        <h2 className="entry-log-date">Entry {this.props.id} - {this.props.month} 2016</h2>
         <p>Video with url: {this.props.video}</p>
+        <VideoPlayer sources={sources} />
         <p>{this.props.description}</p>
       </div>
     )

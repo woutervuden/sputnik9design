@@ -1,12 +1,6 @@
 import React from 'react';
-import Songs from './songs';
 
 class Song extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {count: 0};
-  }
-
   render() {
     return (
       <button
@@ -15,17 +9,21 @@ class Song extends React.Component {
         onClick={this._onClick.bind(this)}
       >
         <p className="song-title" >{this.props.title}</p>
-        Aantal clicks: {this.state.count}
       </button>
     )
   }
 
   _onClick() {
-    this.setState({count: this.state.count + 1});
+    this.props.onClick(this.props.id);
   }
 }
 
 export default class AudioPlayer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { }
+  }
+
   render() {
     return (
       <div className="audio-player" >
@@ -34,12 +32,27 @@ export default class AudioPlayer extends React.Component {
         browser. Click op een &quot;liedje&quot; om de count te verhogen. Het
         zal zo blijven tusen pagina&apos;s &lt;-&gt; de player zal dus ook
         doorspelen.</p>
-        {Songs.map(this._renderSong)}
+        {this.props.songs.map(this._renderSong.bind(this))}
       </div>
     )
   }
 
   _renderSong(song) {
-    return <Song title={song.title} key={song.title} />
+    return <Song
+      title={song.title}
+      url={song.url}
+      key={song.id}
+      id={song.id}
+      onClick={this._onSongClick.bind(this)}
+    />
+  }
+
+  _onSongClick(songId) {
+    var songToPlay = this.props.songs[songId];
+    if (!songToPlay) return;
+    if (this.state.howl) this.state.howl.unload();
+    this.state.howl = new Howl({
+      urls: [songToPlay.url]
+    }).play()
   }
 }

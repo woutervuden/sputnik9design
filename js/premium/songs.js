@@ -1,14 +1,17 @@
 export default [
   {
-    title: "First Song",
-    url: "http://audio1.mp3"
+    id: 0,
+    title: "Netsky - Come Alive",
+    url: "assets/audio/001.mp3"
   },
   {
-    title: "Second Song",
-    url: "http://audio2.mp3"
+    id: 1,
+    title: "Piano Club - The Sadness",
+    url: "assets/audio/002.m4a"
   },
   {
-    title: "Third Song",
-    url: "http://audio3.mp3"
+    id: 2,
+    title: "Hyatus Kyote - Borderline with my Atoms",
+    url: "assets/audio/003.mp3"
   }
 ]

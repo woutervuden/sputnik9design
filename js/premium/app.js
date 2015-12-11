@@ -4,6 +4,7 @@ import Entry from './entry.jsx';
 import Home from './home.jsx';
 import AudioPlayer from './audio-player.jsx';
 import { Router, Route, Link, IndexRoute, IndexLink } from 'react-router';
+import Songs from './songs';
 
 class App extends React.Component {
   render() {
@@ -16,7 +17,7 @@ class App extends React.Component {
         <Link to="/entries/2" activeClassName="active">Entry 3</Link>
         <Link to="/entries/3" activeClassName="active">Entry 4</Link>
         {this.props.children}
-        <AudioPlayer />
+        <AudioPlayer songs={Songs} />
       </div>
     )
   }

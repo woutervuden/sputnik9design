@@ -13,18 +13,18 @@ export default class ControlPanel extends React.Component {
         playing={this.props.playing}
         onPlayPauze={this.props.onPlayPauze}
       />
-      <VolumeControls
-        level={this.props.volume}
-        onChange={this.props.onVolumeChange.bind(this)}
+      <ProgressBar
+        value={this.props.displayTime}
+        max={this.props.duration}
+        onSeek={this.props.onSeek}
       />
       <PlaybackTime
         time={this.props.displayTime}
         duration={this.props.duration}
       />
-      <ProgressBar
-        value={this.props.displayTime}
-        max={this.props.duration}
-        onSeek={this.props.onSeek}
+      <VolumeControls
+        level={this.props.volume}
+        onChange={this.props.onVolumeChange.bind(this)}
       />
       <FullScreenButton onClick={this.props.onFullScreen} />
     </div>

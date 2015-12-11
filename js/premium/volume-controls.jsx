@@ -4,7 +4,9 @@ export default class VolumeControls extends React.Component {
   render() {
     return (
       <div className='volume-controls'>
-        <input type='range'
+        <input
+          className='volume-slider'
+          type='range'
           min='0'
           max='100'
           aria-label='Volume level'

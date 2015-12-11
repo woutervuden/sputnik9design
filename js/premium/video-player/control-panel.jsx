@@ -3,6 +3,7 @@ import PlayPauze from './buttons/playpauze.jsx';
 import VolumeControls from './buttons/volume-controls.jsx';
 import PlaybackTime from './display/playback-time.jsx';
 import ProgressBar from './display/progress-bar.jsx';
+import FullScreenButton from './buttons/fullscreen.jsx';
 
 
 export default class ControlPanel extends React.Component {
@@ -25,6 +26,7 @@ export default class ControlPanel extends React.Component {
         max={this.props.duration}
         onSeek={this.props.onSeek}
       />
+      <FullScreenButton onClick={this.props.onFullScreen} />
     </div>
   }
 }

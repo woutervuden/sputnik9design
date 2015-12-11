@@ -32,6 +32,7 @@ export default class VideoPlayer extends React.Component {
           displayTime={this.state.displayTime}
           duration={this.state.duration}
           onSeek={this._onSeek.bind(this)}
+          onFullScreen={this._onFullScreen.bind(this)}
         />
       </div>
     )
@@ -51,5 +52,9 @@ export default class VideoPlayer extends React.Component {
 
   _onSeek(newTime) {
     this.refs.vid.setCurrentTime(newTime);
+  }
+
+  _onFullScreen() {
+    this.refs.vid.requestFullScreen();
   }
 }

@@ -24,6 +24,11 @@ export default class Video extends React.Component {
     this.refs.vid.getDOMNode().currentTime = newTime;
   }
 
+  // Public - to be called by video player parent
+  requestFullScreen() {
+    this.refs.vid.getDOMNode().webkitRequestFullscreen();
+  }
+
   render() {
     return (
       <video ref="vid" poster={this.props.poster} >

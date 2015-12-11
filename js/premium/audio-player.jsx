@@ -23,8 +23,8 @@ export default class AudioPlayer extends React.Component {
         <ControlPanel
           playing={this.state.playing}
           onPlayPauze={this._onPlayPauze.bind(this)}
-          onPrev={this._onPrev.bind(this)}
-          onNext={this._onNext.bind(this)}
+          onPrev={this._playPrev.bind(this)}
+          onNext={this._playNext.bind(this)}
           displayTime={this.state.displayTime}
           duration={this.state.duration}
           onSeek={this._onSeek.bind(this)}
@@ -61,11 +61,11 @@ export default class AudioPlayer extends React.Component {
     }
   }
 
-  _onPrev() {
+  _playPrev() {
     this._swapSong(this.state.currentSong.id - 1);
   }
 
-  _onNext() {
+  _playNext() {
     this._swapSong(this.state.currentSong.id + 1);
   }
 
@@ -74,6 +74,7 @@ export default class AudioPlayer extends React.Component {
   }
 
   _onSeek(newPosition) {
+    if (!this.howl) return;
     this.howl.pos(newPosition);
     this.setState({displayTime: newPosition});
   }
@@ -89,7 +90,7 @@ export default class AudioPlayer extends React.Component {
    * ===============
    */
   _clearSong() {
-    if (this.howl) this.howl.unload();
+    if (this.howl) this.howl.stop().unload();
     if (this.interval) clearInterval(this.interval);
   }
 
@@ -111,6 +112,9 @@ export default class AudioPlayer extends React.Component {
           loading: false
         })
       },
+      onend: () => {
+        this._playNext()
+      }
     }).play()
     this.setState({
       playing: true,

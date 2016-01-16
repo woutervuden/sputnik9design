@@ -1,0 +1,216 @@
+/*BOOTSTRAP THEME */
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    width:250px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+
+  }
+}
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.nav>li>a {
+  padding-right: 8px;
+}
+
+.menu {
+  padding:5px;
+}
+
+
+
+/* END BOOTSTRAP THEME */
+
+/* ////////////  TITEL  ///////////// */
+
+.scrolltitel {
+  color: #fde634;
+  padding-bottom: 30px;
+  padding-top: 120px;
+
+}
+.scrolltitel div {
+  display: inline-block;
+}
+.scrolltitel img {
+  margin-top: -20px;
+}
+
+/* //////// ARTISTS ///////// */
+.scrollartists {
+  padding-bottom: 80px;
+  margin-left:55px;
+}
+.scrollartists ul {
+    list-style-type: none;
+    padding: 0 
+}
+
+.scrollartists iframe {
+  width:100%;
+  height: 400px;
+}
+
+/* //////// VIDEO ///////// */
+
+.scrollvideo {
+  padding-bottom: 200px;
+}
+.yellowblock {
+  height: 10px;
+  background-color: #fde634;
+  width: 100%;
+}
+
+/* ///////// BLOG ////////// */
+
+.scrollblog {
+  padding-bottom: 100px;
+}
+
+.blogtitel {
+  color: #fde634;
+  } 
+
+.blogtext {
+  padding-left: 30px ;
+  padding-right:30px;
+}
+
+
+/* ///////// PHOTO'S ////////// */
+
+.scrollphoto img {
+  width:100%;
+}
+.scrollphoto>div {
+  padding-bottom: 30px
+}
+
+
+/* ////////// TRACKLIST /////////// */
+.tracklist {
+  padding-top: 120px;
+
+  margin-right: 5%;
+  overflow-y: scroll;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.tracklist img {
+  opacity: 0;
+}
+.track {
+  color: rgba(255,255,255,0.2);
+}
+
+.track H{
+  font-size: 1.2em;
+}
+.track p{
+  color: rgba(255,255,255,0.2);
+  font-size: 0.7em;
+  padding-left: 10%;
+}
+
+.track:hover H{
+  color: #fde634;
+  opacity: 1;
+}
+
+.trackdevide {
+  height: 0px;
+  margin: 0px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 1px;
+}
+
+.active H{
+  color: #fde634;
+}
+.active p{
+  color: #fafafa;
+}
+.active img {
+  opacity: 1;
+}
+
+/* TRACK OPTIONS*/
+
+.trackoptions {
+  margin-left: 7%;
+  margin-right: 5%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.option {
+  color: rgba(255,255,255,0.2);
+  font-size: 1em;
+
+}
+.option:hover {
+  color: #fde634;
+}
+.option img {
+  opacity: 0;
+}
+
+.active img {
+  opacity: 1;
+}
+
+/* MUSIC PLAYER */
+.musiccontrol {
+
+  margin-top: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  height:45px;
+  border-top: 1px solid rgba(253,230,52,1);
+  border-bottom: 1px solid rgba(253,230,52,1)
+}
+
+.musiccontrol>div>div {
+  padding-left: 0px;
+  padding-right: 0px;
+  text-align:center;
+}
+
+.control {
+  display: inline-block;
+}
+.control img { height: auto; }

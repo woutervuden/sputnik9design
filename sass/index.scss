@@ -84,7 +84,7 @@ H3 {
 }
 
 .navbar {
-   background-color: rgba(0,0,0,0.2);
+   background-color: rgba(0,0,0,0.7);
    border-color: transparent;
 }
 
@@ -100,9 +100,10 @@ H3 {
 }
 
 .text {
-	text-align:left;
-	font-size: 18px;
+	text-align: left;
+	font-size: 16px;
 	text-shadow: 2px 2px 2px $black;
+  font-family: $rale;
 }
 
 .yelloww {
@@ -114,6 +115,24 @@ H3 {
 
 
 
+.button {
+  padding: 0px 80px 0px 80px;
+  font-family: $mont;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 100px;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.7);
+  color: $yelloww;
+  border-color: $yelloww;
+  border: solid;
+  border-width: 3px;
+}
+
+.blackbg {
+  background-color: rgba(0,0,0,0.6)
+}
+
 
 
 
@@ -124,17 +143,29 @@ Demo Sections - You can use these as guides or delete them - the scroller will w
 The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children
 of those sections to manage the look and feel of the site. */
 
-// Goed voorbeeld voor mixins!
-@mixin scroll-section {
-  height: 100%;
-  padding-top: 150px;
-  text-align: center;
+.intro-section {
+
+    padding-top: 150px;
+    text-align: left;
+    min-height: 100%;
+
 }
 
-.intro-section { @include scroll-section; }
-.about-section { @include scroll-section; }
-.services-section { @include scroll-section; }
-.contact-section { @include scroll-section; }
+.about-section {
+    padding-top: 150px;
+    text-align: left;
+}
+
+.services-section {
+    padding-top: 150px;
+    text-align: left;
+}
+
+.contact-section {
+    text-align: left;
+}
+
+
 
 /*
 PROGRESS BAR VOOR DE KUNST */
@@ -157,7 +188,3 @@ PROGRESS BAR VOOR DE KUNST */
     top: 0;
 
 }
-
-
-
-

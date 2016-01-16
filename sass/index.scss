@@ -2,9 +2,9 @@
 @import "modules/button";
 @import "partials/homepage";
 
-html { 
+html {
   position: relative;
-  background: url(../img/bg4.jpg) no-repeat center center fixed; 
+  background: url(../img/bg4.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -88,7 +88,7 @@ H3 {
    border-color: transparent;
 }
 
-
+.navbar li { color: $black; }
 
 .footer {
   position: relative;
@@ -136,11 +136,11 @@ H3 {
 
 
 
-/* 
+/*
 PAGE SCROLL (SECTIONS ETC)
 
 Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
-The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children
 of those sections to manage the look and feel of the site. */
 
 .intro-section {
@@ -152,24 +152,16 @@ of those sections to manage the look and feel of the site. */
 }
 
 .about-section {
-
     padding-top: 150px;
     text-align: left;
-
 }
 
 .services-section {
-
     padding-top: 150px;
     text-align: left;
-
 }
 
 .contact-section {
- 
-
-
-
     text-align: left;
 }
 
@@ -194,9 +186,5 @@ PROGRESS BAR VOOR DE KUNST */
     left: 0;
     position: absolute;
     top: 0;
-  
+
 }
-
-
-
-

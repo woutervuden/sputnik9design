@@ -84,11 +84,11 @@ H3 {
 }
 
 .navbar {
-   background-color: rgba(0,0,0,0.2);
+   background-color: rgba(0,0,0,0.7);
    border-color: transparent;
 }
 
-.navbar li { color: $black; } 
+
 
 .footer {
   position: relative;
@@ -100,9 +100,10 @@ H3 {
 }
 
 .text {
-	text-align:left;
-	font-size: 18px;
+	text-align: left;
+	font-size: 16px;
 	text-shadow: 2px 2px 2px $black;
+  font-family: $rale;
 }
 
 .yelloww {
@@ -113,6 +114,24 @@ H3 {
 
 
 
+
+.button {
+  padding: 0px 80px 0px 80px;
+  font-family: $mont;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 100px;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.7);
+  color: $yelloww;
+  border-color: $yelloww;
+  border: solid;
+  border-width: 3px;
+}
+
+.blackbg {
+  background-color: rgba(0,0,0,0.6)
+}
 
 
 
@@ -125,27 +144,33 @@ The padding is very important to make sure the scrollspy picks up the right area
 of those sections to manage the look and feel of the site. */
 
 .intro-section {
-    height: 100%;
+
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
+    min-height: 100%;
+
 }
 
 .about-section {
-    height: 100%;
+
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
+
 }
 
 .services-section {
-    height: 100%;
+
     padding-top: 150px;
-    text-align: center;
+    text-align: left;
+
 }
 
 .contact-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
+ 
+
+
+
+    text-align: left;
 }
 
 

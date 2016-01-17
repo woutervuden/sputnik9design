@@ -195,7 +195,7 @@
 
 /* MUSIC PLAYER */
 .musiccontrol {
-
+  margin-right: 5%;
   margin-top: 10px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -330,3 +330,8 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
 }
+
+.musicvolume {
+  padding: 10px 0;
+}
+doen

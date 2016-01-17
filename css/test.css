@@ -201,7 +201,7 @@
   padding-top: 10px;
   height:45px;
   border-top: 1px solid rgba(253,230,52,1);
-  border-bottom: 1px solid rgba(253,230,52,1)
+
 }
 
 .musiccontrol>div>div {
@@ -214,3 +214,34 @@
   display: inline-block;
 }
 .control img { height: auto; }
+
+/* PROGRESS BAR */
+
+progress {
+  margin-bottom: 10px;
+}
+
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  
+  /* Get rid of default border in Firefox. */
+  border: none;
+  height: 1px;
+  width: 100%;
+  color: #fde634;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: rgba(0,0,0,0);
+  border-radius: 2px;
+}
+progress[value]::-webkit-progress-value {
+  background-color: #fde634;
+}
+
+progress[value]::-moz-progress-bar {
+    background-color: #fde634;
+}

@@ -4,6 +4,8 @@
 @import "partials/general";
 @import "partials/audio-player";
 
+$section-spacing: 50px;
+
 
 // TODO remove when updating nav markup on premium
 .navbar {
@@ -40,12 +42,20 @@
   }
 }
 
+// Video
+.video-wrap {
+  @include yellowblock;
+  margin-bottom: $section-spacing;
+}
+
+// Performers
 .performers {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   text-align: center;
   color: #fafafa;
+  margin-bottom: $section-spacing;
   
   // For wrapping only (when too many performers in a row)
   .performer {
@@ -56,6 +66,7 @@
   .thumb {
     max-width: 100px;
     border-radius: 50%;
+    border: 2px solid rgba(white, 0.1);
   }
   
   .name {
@@ -67,47 +78,18 @@
   .instrument { color: darken(white, 20); }
 }
 
-.video-wrap {
+// Blog
+.blog {
   @include yellowblock;
-  margin-bottom: 30px;
-}
+  text-shadow: 2px 2px 7px #222;
+  margin-bottom: $section-spacing;
 
-
-.scrollartists {
-  padding-bottom: 80px;
-  margin-left:55px;
-}
-.scrollartists ul {
-    list-style-type: none;
-    padding: 0 
-}
-
-.scrollartists iframe {
-  width:100%;
-  height: 400px;
-}
-
-//////// VIDEO /////////
-
-.yellowblock {
-  height: 10px;
-  background-color: #fde634;
-  width: 100%;
-}
-
-/* ///////// BLOG ////////// */
-
-.scrollblog {
-  padding-bottom: 100px;
-}
-
-.blogtitel {
-  color: #fde634;
-  } 
-
-.blogtext {
-  padding-left: 30px ;
-  padding-right:30px;
+  .title { color: $yelloww; }
+  .body { 
+    text-align: justify; 
+    margin-top: 10px;
+    padding: 0 20px;
+  }
 }
 
 

@@ -1,129 +1,65 @@
 @import "modules/variables";
+@import "modules/queries";
 @import "partials/general";
 
+$audio-player-width: 200px;
 
-.sidebar {
-  display: none;
-}
-@media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    width:250px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+// Hide audio player for mobile
+.audio-player { display: none; }
 
-  }
-}
-
-.main {
-  padding: 20px;
-}
-@media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
-}
-
-.navbar .navbar-nav {
+// TODO remove when updating nav markup on premium
+.navbar {
+  .navbar-nav { 
     display: inline-block;
     float: none;
+  }
+
+  .navbar-collapse { text-align: center; }
 }
 
-.navbar .navbar-collapse {
-    text-align: center;
+.nav .menu { padding-right: 8px; }
+
+.main { display: none;}
+
+// Audio Player
+.audio-player {
+  position: fixed;
+  width: $audio-player-width;
+  margin: 100px 20px;
+
+  .controller {
+    position: fixed;
+    bottom: 20px;
+    width: $audio-player-width;
+    border-top: 1px solid rgba(255,255,255,0.4);
+  }
 }
 
-.nav>li>a {
-  padding-right: 8px;
-}
+.trackoptions {
+  list-style: none;
 
-.menu {
-  padding:5px;
-}
+  .option {
+    color: rgba(255,255,255,0.2);
+    cursor: pointer;
 
+    .playicon { 
+      margin-right: 4px;
+      display: none; 
+    }
 
+    &.active { 
+      color: #fde634;
+      .playicon { display: initial; }
+    }
 
-/* END BOOTSTRAP THEME */
-
-/* ////////////  TITEL  ///////////// */
-
-.scrolltitel {
-  color: #fde634;
-  padding-bottom: 30px;
-  padding-top: 120px;
-
-}
-.scrolltitel div {
-  display: inline-block;
-}
-.scrolltitel img {
-  margin-top: -20px;
-}
-
-/* //////// ARTISTS ///////// */
-.scrollartists {
-  padding-bottom: 80px;
-  margin-left:55px;
-}
-.scrollartists ul {
-    list-style-type: none;
-    padding: 0 
-}
-
-.scrollartists iframe {
-  width:100%;
-  height: 400px;
-}
-
-/* //////// VIDEO ///////// */
-
-.scrollvideo {
-  padding-bottom: 200px;
-}
-.yellowblock {
-  height: 10px;
-  background-color: #fde634;
-  width: 100%;
-}
-
-/* ///////// BLOG ////////// */
-
-.scrollblog {
-  padding-bottom: 100px;
-}
-
-.blogtitel {
-  color: #fde634;
-  } 
-
-.blogtext {
-  padding-left: 30px ;
-  padding-right:30px;
+    &:hover { color: $yelloww; }
+  }
 }
 
 
-/* ///////// PHOTO'S ////////// */
-
-.scrollphoto img {
-  width:100%;
-}
-.scrollphoto>div {
-  padding-bottom: 30px
-}
-
-
-/* ////////// TRACKLIST /////////// */
 .tracklist {
-  padding-top: 240px;
   margin-right: 5%;
   overflow-y: scroll;
-  border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 
 .track {
@@ -164,27 +100,7 @@
 
 /* TRACK OPTIONS*/
 
-.trackoptions {
-  margin-left: 7%;
-  margin-right: 5%;
-  padding-bottom: 10px;
-  padding-top: 10px;
-}
-.option {
-  color: rgba(255,255,255,0.2);
-  font-size: 1em;
 
-}
-.option:hover {
-  color: #fde634;
-}
-.option img {
-  opacity: 0;
-}
-
-.active img {
-  display: none;
-}
 
 /* MUSIC PLAYER */
 .musiccontrol {
@@ -205,12 +121,6 @@
   display: inline-block;
 }
 .control img { height: auto; }
-
-/* PROGRESS BAR */
-
-progress {
-
-}
 
 progress[value] {
   /* Reset the default appearance */
@@ -326,4 +236,86 @@ input[type=range]:focus::-ms-fill-upper {
 
 .musicvolume {
   padding: 10px 0;
+}
+
+
+
+
+
+
+/* ////////////  TITEL  ///////////// */
+
+.scrolltitel {
+  color: #fde634;
+  padding-bottom: 30px;
+  padding-top: 120px;
+
+}
+.scrolltitel div {
+  display: inline-block;
+}
+.scrolltitel img {
+  margin-top: -20px;
+}
+
+/* //////// ARTISTS ///////// */
+.scrollartists {
+  padding-bottom: 80px;
+  margin-left:55px;
+}
+.scrollartists ul {
+    list-style-type: none;
+    padding: 0 
+}
+
+.scrollartists iframe {
+  width:100%;
+  height: 400px;
+}
+
+/* //////// VIDEO ///////// */
+
+.scrollvideo {
+  padding-bottom: 200px;
+}
+.yellowblock {
+  height: 10px;
+  background-color: #fde634;
+  width: 100%;
+}
+
+/* ///////// BLOG ////////// */
+
+.scrollblog {
+  padding-bottom: 100px;
+}
+
+.blogtitel {
+  color: #fde634;
+  } 
+
+.blogtext {
+  padding-left: 30px ;
+  padding-right:30px;
+}
+
+
+/* ///////// PHOTO'S ////////// */
+
+.scrollphoto img {
+  width:100%;
+}
+.scrollphoto>div {
+  padding-bottom: 30px
+}
+
+
+@include laptop {
+  .audio-player {
+    display: block;
+  }
+
+  .main {
+    padding: 20px;
+  }
 }

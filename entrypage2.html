@@ -102,51 +102,53 @@
     	</div>
 	</div>
 
-	<ul class="trackoptions">
-		<li class="option">
-			<img class="playicon" src="img/active play.png" width="10px" style="margin-top:-5px; margin-left: -15px" alt="">
-			<span class="option-name">This Session Only</span>
-		</li>
+	<div class="controller">
+		<ul class="trackoptions">
+			<li class="option">
+				<img class="playicon" src="img/active play.png" width="10px" alt="">
+				<span class="option-name">This Session Only</span>
+			</li>
 
-		<li class="option active">
-			<img class="playicon" src="img/active play.png" width="10px" style="margin-top:-5px; margin-left: -15px" alt="">
-			<span class="option-name">All Singles</span>
-		</li>
+			<li class="option active">
+				<img class="playicon" src="img/active play.png" width="10px" alt="">
+				<span class="option-name">All Singles</span>
+			</li>
 
-		<li class="option">
-			<img class="playicon" src="img/active play.png" width="10px" style="margin-top:-5px; margin-left: -15px" alt="">
-			<span class="option-name">All B-Sides</span>
-		</li>
+			<li class="option">
+				<img class="playicon" src="img/active play.png" width="10px" alt="">
+				<span class="option-name">All B-Sides</span>
+			</li>
 
-		<li class="option">
-			<img class="playicon" src="img/active play.png" width="10px" style="margin-top:-5px; margin-left: -15px" alt="">
-			<span class="option-name">Play Everything</span>
-		</li>
-	</ul>
+			<li class="option">
+				<img class="playicon" src="img/active play.png" width="10px" alt="">
+				<span class="option-name">Play Everything</span>
+			</li>
+		</ul>
 
-	<div class="musiccontrol">
-		<div class="volume">
-			  <input class="volume-slider" type="range" min="0" max="100" aria-label="Volume level">
-		</div>
-		<div class="transport row">
-			<button class="col-sm-4"><img src="img/musicprevious.png" /></button>
-			<button class="col-sm-4"><img src="img/musicplay.png" /></button>
-			<button class="col-sm-4"><img src="img/musicnext.png" /></button>
-		</div>
+		<div class="transport">
+			<div class="volume">
+				  <input class="volume-slider" type="range" min="0" max="100" aria-label="Volume level">
+			</div>
+			<div class="navigation row">
+				<button class="col-xs-4"><img src="img/musicprevious.png" /></button>
+				<button class="col-xs-4"><img src="img/musicplay.png" /></button>
+				<button class="col-xs-4"><img src="img/musicnext.png" /></button>
+			</div>
 
-		<div class="musicprogress">
-			<progress max="100" value="80">
-    			<div class="progress-bar">
-        			<span style="width: 35%">35%</span>
-    			</div>
-			</progress>
+			<div class="musicprogress">
+				<progress max="100" value="80">
+	    			<div class="progress-bar">
+	        			<span style="width: 35%">35%</span>
+	    			</div>
+				</progress>
+			</div>
 		</div>
 	</div>
 </div>
 
 
 <!-- Main body -->
-<div class="main col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+<div class="main">
 
 	<!-- Title -->
 	<div class="main-heading">
@@ -224,9 +226,10 @@
 
 <script>
 function setEqualHeight() {
-	var demoheight = $(window).height() - 200;
+	var topPadding = 150;
+	var demoheight = $(window).height() - ($(".controller").height() + topPadding);
 	$("#tracklist").css("height", demoheight); };
-setEqualHeight();
+	setEqualHeight();
 window.onresize = setEqualHeight;
 </script>
 <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>

@@ -27,6 +27,11 @@ button {
   &:focus { outline: none; }
 }
 
+ul { 
+  list-style: none;
+  padding: 0;
+}
+
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;

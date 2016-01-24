@@ -1,4 +1,5 @@
 @import "modules/variables";
+@import "modules/yellowblock";
 @import "modules/queries";
 @import "partials/general";
 @import "partials/audio-player";
@@ -19,6 +20,7 @@
 .main {
   // TODO Make room when new header is added
   margin-top: 60px;
+  padding: 0 15px;
 }
 
 
@@ -38,6 +40,37 @@
   }
 }
 
+.performers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  color: #fafafa;
+  
+  // For wrapping only (when too many performers in a row)
+  .performer {
+    width: 170px;
+    margin-bottom: 25px;
+  }
+  
+  .thumb {
+    max-width: 100px;
+    border-radius: 50%;
+  }
+  
+  .name {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1.2em;
+  }
+  
+  .instrument { color: darken(white, 20); }
+}
+
+.video-wrap {
+  @include yellowblock;
+  margin-bottom: 30px;
+}
 
 
 .scrollartists {
@@ -56,9 +89,6 @@
 
 //////// VIDEO /////////
 
-.scrollvideo {
-  padding-bottom: 200px;
-}
 .yellowblock {
   height: 10px;
   background-color: #fde634;

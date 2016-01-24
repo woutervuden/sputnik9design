@@ -1,48 +1,5 @@
 @import "modules/variables";
-@import "modules/button";
-@import "partials/homepage";
-
-html {
-  position: relative;
-  background: url(../img/bg4.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-}
-
-body {
-	background-color: transparent;
-	color: $white;
-	/* Margin bottom by footer height */
-  	margin-bottom: 60px;
-    width: 100%;
-    height: 100%;
-}
-
-
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Montserrat-Regular'), url(http://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYL3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Raleway Light'), local('Raleway-Light'), url(http://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FArib3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
-}
-@font-face {
-  font-family: 'Raleway';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Raleway Bold'), local('Raleway-Bold'), url(http://fonts.gstatic.com/s/raleway/v9/JbtMzqLaYbbbCL9X6EvaI73hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
-}
+@import "partials/general";
 
 span {
   background-color: $yelloww;
@@ -62,7 +19,7 @@ span {
 }
 
 
-H3 {
+h3 {
 	text-align: center;
 }
 
@@ -187,4 +144,95 @@ PROGRESS BAR VOOR DE KUNST */
     position: absolute;
     top: 0;
 
+}
+
+button:active,
+button:focus { 
+  outline: none; 
+}
+
+button:hover {
+  background: lighten($yelloww, 5);
+}
+
+.submit .span {
+  font-family: $rale;
+}
+
+.paddingtext {  
+  padding: 2px 0; 
+  border-left: 20px solid $yelloww;
+  width: 400px;
+  margin: 20px auto;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.padding5 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.padding10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.padding20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.padding30 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.padding40 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.padding50 {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.padding60 {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.padding70 {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.margin5 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.margin10 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.margin20 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.margin30 {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.margin40 {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.margin50 {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.margin60 {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+.margin70 {
+  margin-left: 70px;
+  margin-right: 70px;
 }

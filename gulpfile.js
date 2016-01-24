@@ -5,7 +5,7 @@ var gulp = require('gulp')
 var serve = require('gulp-serve')
 
 gulp.task('css', function() {
-	gulp.src("sass/index.scss")
+	gulp.src(["sass/home.scss", "sass/premium.scss"])
 	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer({browsers: ["> 1%"]}))
 	.pipe(gulp.dest("css"))

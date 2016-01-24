@@ -1,3 +1,7 @@
+@import "modules/variables";
+@import "partials/general";
+
+
 /*BOOTSTRAP THEME */
 
 /*
@@ -138,7 +142,7 @@
   color: rgba(255,255,255,0.2);
 }
 
-.track H{
+.track h4{
   font-size: 1.2em;
 }
 .track p{
@@ -159,7 +163,7 @@
   font-size: 1px;
 }
 
-.active H{
+.active h4{
   color: #fde634;
 }
 .active p{
@@ -190,7 +194,7 @@
 }
 
 .active img {
-  opacity: 1;
+  display: none;
 }
 
 /* MUSIC PLAYER */
@@ -334,4 +338,3 @@ input[type=range]:focus::-ms-fill-upper {
 .musicvolume {
   padding: 10px 0;
 }
-doen

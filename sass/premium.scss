@@ -16,25 +16,30 @@
 
 .nav .menu { padding-right: 8px; }
 
-.main { display: none;}
-
-
-/* ////////////  TITEL  ///////////// */
-
-.scrolltitel {
-  color: #fde634;
-  padding-bottom: 30px;
-  padding-top: 120px;
-
-}
-.scrolltitel div {
-  display: inline-block;
-}
-.scrolltitel img {
-  margin-top: -20px;
+.main {
+  // TODO Make room when new header is added
+  margin-top: 60px;
 }
 
-/* //////// ARTISTS ///////// */
+
+.main-heading {
+  text-align: center;
+  margin-bottom: 40px;
+
+  .bolts-left,
+  .bolts-right { 
+    position: relative;
+    bottom: 8px; 
+  }
+  .title {
+    color: $yelloww;
+    font-size: 1.5em;
+    display: inline-block;
+  }
+}
+
+
+
 .scrollartists {
   padding-bottom: 80px;
   margin-left:55px;
@@ -49,7 +54,7 @@
   height: 400px;
 }
 
-/* //////// VIDEO ///////// */
+//////// VIDEO /////////
 
 .scrollvideo {
   padding-bottom: 200px;

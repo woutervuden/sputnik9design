@@ -20,6 +20,12 @@ body {
     height: 100%;
 }
 
+button {
+  background: none;
+  border: none;
+
+  &:focus { outline: none; }
+}
 
 @font-face {
   font-family: 'Montserrat';

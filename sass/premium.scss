@@ -4,7 +4,7 @@
 @import "partials/general";
 @import "partials/audio-player";
 
-$section-spacing: 50px;
+$section-spacing: 80px;
 
 
 // TODO remove when updating nav markup on premium
@@ -45,7 +45,7 @@ $section-spacing: 50px;
 // Video
 .video-wrap {
   @include yellowblock;
-  margin-bottom: $section-spacing;
+  margin-bottom: 30px;
 }
 
 // Performers
@@ -92,16 +92,15 @@ $section-spacing: 50px;
   }
 }
 
-
-/* ///////// PHOTO'S ////////// */
-
-.scrollphoto img {
-  width:100%;
+// Photos
+.gallery {
+  .thumb {
+    margin-bottom: 30px;
+    img { 
+      @include yellowblock;
+    }
+  }
 }
-.scrollphoto>div {
-  padding-bottom: 30px
-}
-
 
 @include laptop {
   .main {

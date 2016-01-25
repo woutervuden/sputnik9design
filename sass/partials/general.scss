@@ -24,7 +24,8 @@ button {
   background: none;
   border: none;
 
-  &:focus { outline: none; }
+  &:focus,
+  &:active{ outline: none; }
 }
 
 ul { 

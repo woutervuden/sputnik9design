@@ -146,11 +146,6 @@ PROGRESS BAR VOOR DE KUNST */
 
 }
 
-button:active,
-button:focus { 
-  outline: none; 
-}
-
 button:hover {
   background: lighten($yelloww, 5);
 }
@@ -159,8 +154,8 @@ button:hover {
   font-family: $rale;
 }
 
-.paddingtext {  
-  padding: 2px 0; 
+.paddingtext {
+  padding: 2px 0;
   border-left: 20px solid $yelloww;
   width: 400px;
   margin: 20px auto;
